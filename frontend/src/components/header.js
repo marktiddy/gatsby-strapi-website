@@ -38,10 +38,7 @@ const Header = ({ siteTitle }) => (
               data.allStrapiPages.edges.map((page, i) => {
                 return (
                   <li class="nav-item" key={page.node.strapiId}>
-                    <Link
-                      to={`/pages/${page.node.strapiId}`}
-                      className="nav-link"
-                    >
+                    <Link to={`/${page.node.title}`} className="nav-link">
                       {page.node.title}
                     </Link>
                   </li>

@@ -14,6 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
           edges {
             node {
               strapiId
+              title
             }
           }
         }
@@ -30,7 +31,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const pages = result.data.pages.edges
   pages.forEach((page, index) => {
     createPage({
-      path: `/pages/${page.node.strapiId}`,
+      path: `/${page.node.title}`,
       component: require.resolve("./src/templates/page.js"),
       context: {
         id: page.node.strapiId,
